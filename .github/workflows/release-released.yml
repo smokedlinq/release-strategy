@@ -1,4 +1,4 @@
-name: Release
+name: Upate Current Release
 
 on:
   release:
