@@ -1,11 +1,11 @@
-name: Release Tags
+name: 'Deployment: Staging'
 
 on:
   pull_request: 
-    branches: [current-release]
+    branches: [release]
 
 jobs:
-  deploy:
+  staging:
     uses: ./.github/workflows/deploy-environment.yml
     with:
       github-environment: Staging

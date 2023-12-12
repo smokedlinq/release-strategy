@@ -1,4 +1,4 @@
-name: Release Tags
+name: Create Release Pull Request
 
 on:
   release:
@@ -7,10 +7,18 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions: 
-      contents: read
+    permissions:
+      contents: write
       pull-requests: write
     steps:
-      - run: gh pr create --base current-release --fill
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - run: git checkout -B release-${{ github.event.release.tag_name }}
+
+      - run: git push -u origin release-${{ github.event.release.tag_name }}
+      
+      - run: gh pr create --base release --fill
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

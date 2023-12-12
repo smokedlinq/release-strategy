@@ -1,0 +1,11 @@
+name: 'Deployment: Test'
+
+on:
+  release:
+    types: [prereleased]
+
+jobs:
+  test:
+    uses: ./.github/workflows/deploy-environment.yml
+    with:
+      github-environment: Test

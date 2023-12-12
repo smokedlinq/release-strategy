@@ -1,11 +1,11 @@
-name: Release Tags
+name: 'Deployment: Development'
 
 on:
-  release:
-    types: [prereleased]
+  push:
+    branches: [main]
 
 jobs:
-  deploy:
+  development:
     uses: ./.github/workflows/deploy-environment.yml
     with:
       github-environment: Test
