@@ -1,0 +1,13 @@
+on:
+  workflow_call:
+    inputs:
+      github-environment:
+        type: string
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.github-environment }}
+    steps:
+      - run: echo "Release to ${{ inputs.github-environment }}"

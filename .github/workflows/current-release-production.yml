@@ -1,0 +1,11 @@
+name: Release Tags
+
+on:
+  push: 
+    branches: [current-release]
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy-environment.yml
+    with:
+      github-environment: Production

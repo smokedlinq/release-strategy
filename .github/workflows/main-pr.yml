@@ -1,0 +1,11 @@
+name: Release Tags
+
+on:
+  pull_request: 
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This is a pull request into main"

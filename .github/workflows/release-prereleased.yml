@@ -1,0 +1,11 @@
+name: Release Tags
+
+on:
+  release:
+    types: [prereleased]
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/deploy-environment.yml
+    with:
+      github-environment: Test
