@@ -19,7 +19,7 @@ jobs:
 
       - run: git push -u origin release-${{ github.event.release.tag_name }}
       
-      - run: gh pr create --base release --title "$PR_TITLE" --body "$PR_BODY"
+      - run: gh pr create --base release --title "$PR_TITLE" --body "$PR_BODY" --draft
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_TITLE: Release ${{ github.event.release.name }}
