@@ -2,7 +2,7 @@ name: 'Deployment: Staging'
 
 on:
   pull_request: 
-    branches: [current-release]
+    branches: [release]
 
 jobs:
   staging:

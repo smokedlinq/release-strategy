@@ -2,7 +2,7 @@ name: 'Deployment: Production'
 
 on:
   push: 
-    branches: [current-release]
+    branches: [release]
 
 jobs:
   production:

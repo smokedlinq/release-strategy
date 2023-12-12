@@ -8,4 +8,4 @@ jobs:
   development:
     uses: ./.github/workflows/deploy-environment.yml
     with:
-      github-environment: Development
+      github-environment: Test

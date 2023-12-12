@@ -1,4 +1,4 @@
-name: Current Release
+name: Create Release Branch
 
 on:
   release:
@@ -7,10 +7,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions: 
+    permissions:
       contents: read
       pull-requests: write
     steps:
-      - run: gh pr create --base current-release --fill
+      - run: gh pr create --base release --fill
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
