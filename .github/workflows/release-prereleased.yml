@@ -5,7 +5,7 @@ on:
     types: [prereleased]
 
 jobs:
-  deploy:
+  test:
     uses: ./.github/workflows/deploy-environment.yml
     with:
       github-environment: Test

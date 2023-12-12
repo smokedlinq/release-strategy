@@ -5,7 +5,7 @@ on:
     branches: [current-release]
 
 jobs:
-  deploy:
+  staging:
     uses: ./.github/workflows/deploy-environment.yml
     with:
       github-environment: Staging
