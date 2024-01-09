@@ -15,6 +15,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - run: git config --local user.name $(git log -1 --pretty=format:'%an')
+
+      - run: git config --local user.email $(git log -1 --pretty=format:'%ae')
+
       - run: git switch release
       
       - run: git checkout -B release-${{ github.event.release.tag_name }}
